@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "CV",
+  "description": "A CV for a facster",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "description": "The person's first name",
+      "type": "string"
+    },
+    "lastName": {
+      "description": "The person's last name",
+      "type": "string"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the technology"
+          }
+        }
+      }
+    },
+    "roles": {
+      "description": "Previous work experience",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The job title / role",
+            "type": "string"
+          },
+          "organisationName": {
+            "description": "the name of the organisation you worked for",
+            "type": "string"
+          },
+          "startDate": {
+            "$ref": "#/definitions/jobDate"
+          },
+          "endDate": {
+            "oneOf": [{
+                "type": "string",
+                "enum": ["current"]
+              },
+              {
+                "$ref": "#/definitions/jobDate"
+              }
+            ]
+          }
+        },
+        "required": ["name", "organisationName", "startDate", "endDate"]
+      }
+    }
+  },
+  "required": ["firstName", "lastName", "roles", "skills"],
+  "definitions": {
+    "jobDate": {
+      "type": "object",
+      "properties": {
+        "month": {
+          "type": "number",
+          "maximum": "12",
+          "minimum": "1"
+        },
+        "year": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}
