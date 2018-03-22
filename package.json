@@ -4,12 +4,27 @@
   "description": "Util library for @foundersandcoders to manage hiring and recruitment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier-standard '**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
   },
   "author": "@des-des",
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.0.11",
     "jsonschema": "^1.2.2"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier-standard": "^8.0.0"
   }
 }

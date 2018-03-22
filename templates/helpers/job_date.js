@@ -14,7 +14,7 @@ const months = [
 ]
 
 module.exports = date => {
-  const month = months[date.month-1]
+  const month = months[date.month - 1]
 
   return `${month} ${date.year}`
 }
