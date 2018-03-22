@@ -1,0 +1,20 @@
+<section class="fj-employment">
+  <h2 class="fj-employment__title"> Employment </h2>
+  <ul>
+    {{#each roles }}
+      <li class="fj-role">
+        <h3 class="fj-role__headline">
+          {{ name }} | {{ organisationName }} | {{ jobDate startDate }} - {{ jobDate endDate }}
+        </h3>
+        <p class="fj-role__description"> {{ description }} </p>
+        <ul>
+          {{#each points}}
+              <li>
+                {{this}}
+              </li>
+          {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+</section>
