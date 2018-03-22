@@ -1,0 +1,15 @@
+{
+  "name": "facster-jobs",
+  "version": "1.0.0",
+  "description": "Util library for @foundersandcoders to manage hiring and recruitment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@des-des",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "jsonschema": "^1.2.2"
+  }
+}
